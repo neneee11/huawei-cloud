@@ -1,0 +1,73 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+h1 {
+    color: #4a4a4a;
+}
+
+input[type="file"] {
+    margin: 20px 0;
+    padding: 10px;
+    border: 2px dashed #0078d4;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#resultContainer {
+    width: 90%;
+    max-width: 600px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* นี่คือส่วนที่ซ้อนภาพกับ Canvas (สำหรับวาดกรอบ) */
+#imageCanvasWrapper {
+    position: relative;
+    max-width: 100%;
+}
+
+#previewImage, #detectionCanvas {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* ให้ Canvas ทับอยู่บน Image */
+#detectionCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#detectionResult {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-top: 20px;
+    text-align: left;
+    white-space: pre-wrap; /* ให้แสดงผล JSON สวยๆ */
+    word-wrap: break-word;
+}
+
+/* ตัวหมุนๆ (Loader) */
+.loader {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #0078d4;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

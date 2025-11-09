@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cockroach Detector</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>🪳 Cockroach Detector</h1>
+    <p>Upload an image to detect cockroaches.</p>
+
+    <input type="file" id="imageUploader" accept="image/*">
+    <div id="resultContainer">
+        <div id="loader" class="loader" style="display: none;"></div>
+        <div id="imageCanvasWrapper">
+            <img id="previewImage" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E" alt="Preview of uploaded image" style="display: none;">
+            <canvas id="detectionCanvas"></canvas>
+        </div>
+
+        <pre id="detectionResult"></pre>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
